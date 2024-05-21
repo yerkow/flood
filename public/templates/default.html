@@ -1,0 +1,83 @@
+<div class="default-container" data-ng-switch="$state.current.name" ng-cloak>
+  <div class="main">
+    <header class="logo">
+      <a href="/"><img class="go-logo" src="../images/go-logo.png" alt="Game On!"/></a>
+    </header>
+
+    <section class="enter" data-ng-switch-when="default">
+      <header>
+        <h1>GAME<span class="on">ON</span></h1>
+        <span class="lead">A Throwback Adventure in Cloud Native Development</span>
+      </header>
+      <p class="intro">You are in a maze of little interconnected rooms, none alike. And you aren't alone...</p>
+      <a class="button play" ng-class="{disabled: $state.current.name !='default'}"
+         ui-sref="default.login">Enter</a>
+
+      <footer>
+        <div class="terms-link">By entering this site you are agreeing to our <a ui-sref="default.terms">terms</a></div>
+        <div title="peace, love, play"><i class="fa fa-hand-peace-o"></i> <i class="fa fa-heart-o"></i> <i class="fa fa-play"></i></div>
+      </footer>
+    </section>
+
+    <section class="terms" data-ng-switch-when="default.terms">
+      <a class="close" ng-click="ctrl.backToTheBeginning()">&times;</a>
+      <header>
+        <h1>Terms and Conditions</h1>
+      </header>
+      <div ng-include="'/terms.html'"></div>
+    </section>
+
+    <section class="auth" data-ng-switch-when="default.auth">
+      <a class="close" ng-click="ctrl.backToTheBeginning()">&times;</a>
+      <header>
+        <h1 class="signin">Sign in</h1>
+      </header>
+      <div>Authenticating ... <i class="fa fa-cog fa-spin"></i></div>
+    </section>
+
+    <section class="login" data-ng-switch-when="default.login">
+      <a class="close" ng-click="ctrl.backToTheBeginning()">&times;</a>
+      <header>
+        <h1 class="signin">Sign in</h1>
+      </header>
+      <div class="buttons">
+        <a class="button" ng-href="{{ctrl.api.TWITTER}}">Twitter</a>
+        <a class="button" ng-href="{{ctrl.api.GOOGLE}}">Google</a>
+        <a class="button" ng-href="{{ctrl.api.FACEBOOK}}">Facebook</a>
+        <a class="button" ng-href="{{ctrl.api.GITHUB}}">GitHub</a>
+        <a ng-if="ctrl.showDummy()" class="button" ng-href="{{ctrl.api.DUMMY}}">Anonymous user</a>
+      </div>
+    </section>
+
+    <section class="usersetup" data-ng-switch-when="default.usersetup">
+      <header>
+        <h1>User Profile</h1>
+      </header>
+      <div>Scrying user details ... <i class="fa fa-cog fa-spin"></i></div>
+    </section>
+
+    <section class="userprofile" data-ng-switch-when="default.profile">
+      <header>
+        <h1>User Profile</h1>
+      </header>
+      <form name="ctrl.profileForm">
+        <profile-core form="ctrl.profileForm" user="ctrl.user" class="box"></profile-core>
+        <button type="button" class="btn" ng-click="ctrl.user.create()" ng-disabled="ctrl.profileForm.$invalid"><i class="fa fa-floppy-o"></i> Done!</button>
+      </form>
+    </section>
+
+    <!--  error messages -->
+    <section class="error" data-ng-switch-default>
+      <header>
+        <h1>Something has gone wrong.</h1>
+      </header>
+      <div class="body">
+        <p class="padded">Vizzini said when the job goes wrong, we should go back to the beginning.</p>
+        <a class="button" data-ng-click="ctrl.backToTheBeginning()">Back to the beginning</a>
+      </div>
+    </section>
+  </div>
+
+  <aside class="related" ng-include="'/sidebar.html'"></aside>
+
+</div>

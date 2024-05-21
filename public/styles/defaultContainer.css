@@ -1,0 +1,229 @@
+/*! gameontext defaultContainer.css | APL2.0 License | github.com/gameontext/gameon-webapp */
+a {
+  color: var(--dark-aqua);
+}
+a:hover {
+  color: var(--mid-teal);
+}
+aside.related,
+aside.related a {
+  color: #fff;
+}
+section.enter,
+section.error,
+section.login,
+section.terms,
+section.usersetup,
+.default-container section.userprofile {
+  color: var(--deep-teal);
+}
+.background,
+aside.related .text,
+aside.related .subtext,
+aside.related .icon {
+  background-color: var(--mid-teal);
+}
+.main a.button,
+.main button,
+.main input[type="submit"] {
+  background-color: var(--red-orange);
+  border: none;
+  color: #fff;
+}
+.main button:disabled,
+.main button[disabled],
+.main input[type="submit"]:disabled {
+  background-color: #bbb;
+  border: none;
+  color: #fff;
+}
+.background .icon-corner use,
+.background .icon-floating use,
+.background .icon-big-light use,
+.background .icon-small-light use {
+  fill: var(--aqua);
+}
+.background .icon-bottom use,
+.background .icon-left use,
+aside.related .button .icon use {
+  fill: var(--deep-teal);
+}
+/* Main section
+ ------------------------------------ */
+img.go-logo {
+  height: 5rem;
+  margin: 2rem;
+}
+section.auth,
+section.enter,
+section.error,
+section.login,
+section.terms,
+section.usersetup,
+.default-container section.userprofile {
+  text-align: center;
+}
+section header {
+  margin: 3rem 0;
+}
+section header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.main > header {
+  text-align: center;
+}
+.default-container .userprofile .box {
+  justify-content: center;
+  margin-left: 1.3rem;
+}
+.default-container section .close {
+  display: block;
+  float: right;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  z-index: 9;
+}
+/* Enter page
+ ------------------------------------ */
+section.enter header h1 {
+  font-size: 7rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--mid-teal);
+}
+section.enter header h1 .on {
+  font-weight: bolder;
+  color: var(--aqua);
+}
+section.enter header .lead {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+}
+section.enter > footer {
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+section.enter .intro {
+  text-align: justify;
+  line-height: 2rem;
+  max-width: 35rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  margin: 2rem auto;
+}
+/* Login page
+ ------------------------------------ */
+section.login .buttons {
+  margin: 1rem auto;
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+}
+section.login .button {
+  margin: 0.3rem;
+  width: 30rem;
+}
+/* Scrying/Authenticating page
+ ------------------------------------ */
+section.usersetup,
+section.auth {
+  font-size: 2rem;
+}
+/* Terms page
+ ------------------------------------ */
+section.terms {
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0;
+  padding: 2rem;
+}
+/* Sidebar
+ ------------------------------------ */
+aside.related {
+  padding: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+aside.related .link {
+  text-decoration: none;
+  position: relative;
+  min-height: 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-transform: none;
+  font-size: 1.5rem;
+  white-space: normal;
+  margin: 0;
+  padding: 1rem 0 1rem 4rem;
+}
+aside.related .link .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3rem;
+  width: 3rem;
+  padding: 1rem 1rem 1rem 0;
+}
+aside.related .link .text {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+aside.related .link .subtext {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+/* Responsive layout
+ ------------------------------------ */
+.default-container {
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+.main {
+  background-color: #fff;
+  min-height: 70vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+/* Larger than tablet */
+@media (min-width: 800px) {
+  .default-container {
+    flex-shrink: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  aside.related {
+    background: transparent;
+    margin-top: 100px;
+    padding: 0 30px;
+    min-width: 350px;
+    max-width: 400px;
+    order: -1;
+    flex: 1;
+  }
+  div.main {
+    min-height: 100vh;
+    min-width: 35rem;
+    max-width: 68rem;
+    flex: 2;
+  }
+  section.terms {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+}
